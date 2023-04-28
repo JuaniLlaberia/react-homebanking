@@ -1,0 +1,307 @@
+.transfer-page-light {
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+
+    --sec-bg-color: rgb(245, 242, 242);
+    --main-text-color: rgb(18, 18, 18);
+    --sec-text-color: rgba(41, 42, 42, 0.751);
+    --icons-color: rgb(68, 68, 255);
+    --border-color: rgb(221, 220, 220);
+    --input-bg-color: white;
+
+    transition: all 0.3s ease;
+}
+
+.transfer-page-dark {
+    height: 100vh;
+    background-color: rgb(34, 31, 38);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+
+    --sec-bg-color: rgb(54, 50, 64);
+    --main-text-color: rgb(255, 255, 255);
+    --sec-text-color: rgba(255, 255, 255, 0.751);
+    --icons-color: rgb(251, 251, 251);
+    --border-color: rgb(39, 34, 34);
+    --input-bg-color: rgb(73, 71, 97);
+}
+
+
+.left-container {
+    width: 70vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.transfer-money {
+    width: 30vw;
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 25px;
+    border-radius: 8px;
+    background-color: var(--sec-bg-color);
+    box-shadow: 0 2px 5px black;
+    color: var(--main-text-color);
+}
+
+.transfer-input {
+    margin: 5px;
+    padding: 10px 55px;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: none;
+    width: 25vw;
+    position: relative;
+    background-color: var(--input-bg-color);
+    color: var(--main-text-color);
+}
+
+.transfer-input-area {
+    margin: 5px;
+    width: 25vw;
+    height: 75px;
+    resize: none;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 55px;
+    font-size: 1rem;
+    background-color: var(--input-bg-color);
+    color: var(--main-text-color);
+}
+
+.transfer-input:focus, .transfer-input-area:focus {
+    outline: 1px solid rgb(62, 62, 251);
+}
+
+.transfer-money button {
+    background-color: rgb(62, 62, 251);
+    color: white;
+    padding: 10px 50px;
+    border-radius: 24px;
+    border: none;
+    margin: 5px;
+    margin-top: 25px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.transfer-money button:hover {
+    background-color: rgb(47, 47, 238);
+    color: rgb(238, 238, 238);
+    cursor: pointer;
+    transform: translateY(3%);
+}
+
+.transfer-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.amount-sect{
+    position: relative;
+}
+.icon-money{
+    position: absolute;
+    left: 25px;
+    top: 15.5px;
+    color: var(--icons-color);
+}
+.icon-email{
+    position: absolute;
+    left: 22px;
+    top: 15.5px;
+    color: var(--icons-color);
+}
+.icon-comment{
+    position: absolute;
+    left: 19px;
+    top: 12px;
+    color: var(--icons-color);
+}
+
+.right-container {
+    width: 50vw;
+    height: 45vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.curr-balance {
+    background-color: rgb(129, 255, 118);
+    box-shadow: 0 2px 5px black;
+    border-radius: 8px;
+    border: none;
+    padding: 10px;
+    width: 15vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: rgba(63, 63, 63, 0.874);
+}
+
+.curr-balance span {
+    color: rgb(32, 32, 32);
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.transfer-fee {
+    background-color: rgb(255, 191, 81);
+    box-shadow: 0 2px 5px black;
+    border-radius: 8px;
+    border: none;
+    padding: 10px;
+    width: 15vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: rgba(63, 63, 63, 0.874);
+}
+
+.transfer-fee span {
+    color: rgb(32, 32, 32);
+    font-weight: 600;
+}
+
+.extra {
+    background-color: rgb(253, 233, 50);
+    box-shadow: 0 2px 5px black;
+    border-radius: 8px;
+    border: none;
+    padding: 10px;
+    height: 10vh;
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: rgba(63, 63, 63, 0.874);
+}
+
+.statusOk {
+    background-color: rgb(129, 255, 118);
+}
+
+.statusWrong {
+    background-color: rgb(255, 86, 86);
+}
+
+.extra span {
+    color: rgb(32, 32, 32);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 970px) {
+    .transfer-page-light {
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap: 20px;
+    }
+    .transfer-page-dark {
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap: 20px;
+    }
+    .right-container {
+        flex-direction: row;
+        width: 60vw;
+        height: 10vh;
+        justify-content: center;
+        align-items: center;
+    }
+    .left-container {
+        width: 60vw;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+    .curr-balance,.transfer-fee, .extra{
+        height: 75px;
+        width: 18vw;
+        min-width: 150px;
+    }
+    .transfer-money {
+        width: 45vw;
+        min-width: 400px;
+    }
+    .transfer-input,  .transfer-input-area {
+        width: 45vw;
+    }
+    .transfer-money button {
+        transform: scale(0.9);
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 530px) {
+    .transfer-page-light {
+        height: 100vh;
+    }
+    .transfer-page-dark {
+        height: 100vh;
+    }
+    .right-container {
+        flex-direction: column;
+        width: 80vw;
+        gap: 10px;
+    }
+
+    .curr-balance,.transfer-fee, .extra {
+        width: 60vw;
+        height: 7vh;
+    }
+
+    .statusWrong {
+        height: 10vh;
+    }
+
+    .left-container {
+        position: absolute;
+        bottom: 25%;
+        width: 40vw;
+    }
+
+    .right-container {
+        position: absolute;
+        top: 10%;
+        width: 40vw;
+    }
+
+    .transfer-money {
+        width: 25vw;
+        min-width: 250px;
+    }
+    .transfer-input,  .transfer-input-area {
+        width: 60vw;
+        max-width: 225px;
+    }
+    .transfer-money button {
+        transform: scale(0.8);
+        margin-top: 5px;
+        width: 60vw;
+    }
+    .transfer-title {
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+}

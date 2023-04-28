@@ -1,0 +1,147 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main {
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+
+    --sec-bg-color: rgb(245, 242, 242);
+    --main-text-color: rgb(18, 18, 18);
+    --sec-text-color: rgba(41, 42, 42, 0.751);
+    --icons-color: rgb(68, 68, 255);
+    --border-color: rgb(221, 220, 220);
+    --hover-color: rgb(221, 221, 221);
+
+    transition: all 0.3s ease;
+}
+
+main.dark {
+    height: 100vh;
+    background-color: rgb(34, 31, 38);
+
+    --sec-bg-color: rgb(54, 50, 64);
+    --main-text-color: rgb(255, 255, 255);
+    --sec-text-color: rgba(255, 255, 255, 0.751);
+    --icons-color: rgb(68, 68, 255);
+    --border-color: rgb(39, 34, 34);
+    --hover-color: rgb(84, 81, 107);
+
+}
+
+.acc-information {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.user-name {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--main-text-color);
+}
+
+.user-email, .user-acc {
+    font-size: 1rem;
+    color: var(--sec-text-color);
+}
+
+.acc-options {
+    background-color: var(--sec-bg-color);
+    padding: 2.5px;
+    margin: 10px;
+    border-radius: 12px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    margin: 7.5px;
+    padding: 7.5px;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 500;
+    color: var(--main-text-color);
+}
+
+.info-item:last-child{
+    border: none;
+}
+
+.info-item:hover {
+    background-color: var(--hover-color);
+    cursor: pointer;
+}
+
+.info-item .icon {
+    color: var(--icons-color);
+}
+
+.theme-toggler{
+    display: flex;
+    align-items: center;
+    background-color: var(--sec-bg-color);
+    padding: 2.5px;
+    margin: 10px;
+    border-radius: 12px;
+    height: 10vh;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding-left: 15px;
+    color: var(--main-text-color);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons button {
+    position: absolute;
+    bottom: 18%;
+    width: 80vw;
+    padding: 5px;
+    font-size: 1.5rem;
+    border: none;
+    background-color: rgb(255, 108, 79);
+}
+
+.buttons button:hover {
+    background-color: rgb(252, 85, 52);
+    color: rgb(47, 47, 45);
+    cursor: pointer;
+}
+
+
+@media (min-width: 800px) { 
+    .acc-information {
+        margin-left: 50px;
+    }
+    .user-name {
+        font-size: 2.5rem;
+    }
+    
+    .user-email, .user-acc {
+        font-size: 1.5rem;
+    }
+    .acc-options {
+        width: 70vw;
+    }
+
+    .option-pc{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .buttons button {
+        width: 70vw;
+    }
+    .theme-toggler {
+        width: 70vw;
+        position: absolute;
+        left: 14.5%;
+    }
+}

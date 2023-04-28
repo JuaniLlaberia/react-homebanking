@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Uncut Sans', sans-serif;
+}
+
+.background-signup {
+    background-image: linear-gradient(262deg, rgba(63,61,255,1) 0%, rgba(204,63,250,1) 0%, rgba(58,107,255,1) 100%);
+    height: 100vh;
+}
+
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.982);
+    width: 50vw;
+    padding: 30px 5px;
+    max-width: 600px;
+    min-width: 250px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 2px 7px black;
+    flex-wrap: wrap;
+}
+
+.login-container form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 25vw;
+    min-width: 150px;
+}
+
+.signup-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.login-input {
+    padding: 8px 1px;
+    margin-bottom: 10px;
+    margin-top: 2.5px;
+    font-size: 1rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgb(144, 144, 144);
+    border-radius: 0;
+}
+
+.login-input::placeholder {
+    color: rgb(144, 144, 144);
+}
+
+.login-input:focus {
+    outline: none;
+}
+
+.login-btn, .login-btn:disabled {
+    width: 25vw;
+    min-width: 200px;
+    max-width: 400px;
+    padding: 12px 5px;
+    border-radius: 16px;
+    border: none;
+    background-color: rgb(77, 68, 255);
+    color: white;
+    transition: all 0.3s ease;
+    margin-bottom: 7.5px;
+    margin-top: 30px;
+}
+
+.login-btn:hover, .login-btn:disabled:hover {
+    background-color: rgb(56, 45, 251);
+    color: rgba(255, 255, 255, 0.834);
+    cursor: pointer;
+    transform: translateY(3%);
+}
+
+.login-btn:disabled:hover {
+    cursor: not-allowed;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.btn-container p{
+   font-size: 0.75rem;
+}
+
+.login-input:invalid {
+    border: none;
+    border-bottom: 1px solid red;
+}
+
+.error-border {
+    border: none;
+    border-bottom: 1px solid red;
+}
+
+.error-msg {
+    color: rgb(255, 55, 55);
+    font-size: 0.8rem;
+}

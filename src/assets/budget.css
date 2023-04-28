@@ -1,0 +1,547 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.budget-page-light {
+    height: 100vh;
+    background-color: rgb(34, 31, 38);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+
+    --card-bg: rgb(255, 255, 255);
+    --sec-bg-color: rgb(245, 242, 242);
+    --main-text-color: rgb(18, 18, 18);
+    --sec-text-color: rgba(41, 42, 42, 0.751);
+    --icons-color: rgb(68, 68, 255);
+    --border-color: rgb(221, 220, 220);
+    --input-bg-color: white;
+    --btn-color: rgb(68, 68, 255);
+    --btn-text-color:white;
+
+    transition: all 0.3s ease;
+}
+
+.budget-page-dark {
+    height: 100vh;
+    background-color: rgb(34, 31, 38);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+
+    --card-bg: rgb(34, 31, 38);
+    --sec-bg-color: rgb(54, 50, 64);
+    --main-text-color: rgb(255, 255, 255);
+    --sec-text-color: rgba(255, 255, 255, 0.751);
+    --icons-color: rgb(251, 251, 251);
+    --border-color: rgb(39, 34, 34);
+    --input-bg-color: rgb(73, 71, 97);
+    --btn-color: rgb(243, 243, 248);
+    --btn-text-color: black;
+}
+
+.budgets-container {
+    height: 53.5vh;
+    overflow: scroll;
+    width: 80vw;
+    border-radius: 8px;
+    margin-top: 50px;
+}
+
+.budgets-container::-webkit-scrollbar {
+    display: none;
+  }
+
+
+.budget-card {
+    position: relative;
+    display: flex;
+    gap: 5vw;
+    align-items: center;
+    /* width: 70vw; */
+    height: 10vh;
+    padding: 10px;
+    background-color: var(--sec-bg-color);
+    margin: 5px;
+    border-radius: 8px;
+    border: none;
+}
+
+.budget-card-name {
+    font-size: 1.25rem;
+    color: var(--main-text-color);
+    width: 12vw;
+}
+
+.budget-card-progess {
+    width: 30vw;
+    height: 3.5vh;
+}
+
+.primary-color {
+    accent-color: rgb(99, 125, 255);
+}
+
+.danger-color, .danger-color-over {
+    accent-color: rgb(255, 61, 61);
+}
+
+.amount-card {
+    text-align: center;
+    color: var(--main-text-color);
+    width: 15vw;
+}
+
+.info-btn-budget {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--main-text-color);
+}
+
+.btns-card {
+    width: 15vw;
+}
+
+.crramount-budget-card {
+    font-size: 1.6rem;
+    color: var(--main-text-color);
+    font-weight: 500;
+}
+
+.totalamount-budget-card{
+    font-size: 1rem;
+    color: var(--sec-text-color);
+    font-weight: 300;
+}
+
+.add-expense-btn {
+    padding: 10px;
+    border-radius: 12px;
+    border: none;
+    background-color: rgb(68, 68, 255);
+    color: white;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.add-expense-btn:hover {
+    background-color: rgb(46, 46, 236);
+    color: rgb(230, 230, 230);
+    cursor: pointer;
+}
+
+.add-budget-modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--card-bg);
+    padding: 10px;
+    width: 25vw;
+    height: 30vh;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px var(--sec-text-color);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--main-text-color);
+}
+
+.add-budget-modal p {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+}
+
+.add-budget-input {
+    width: 20vw;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    margin: 5px;
+    font-size: 1rem;
+    background-color: rgb(238, 240, 242);
+}
+
+.add-budget-input:focus {
+    outline: none;
+}
+
+.buttons-modal {
+    display: flex;
+    gap: 25px;
+}
+
+.create-budget-btn {
+    background-color: rgb(68, 68, 255);
+    color: white;
+    font-size: 1rem;
+    border-radius: 12px;
+    border: none;
+    padding: 15px 40px;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.close-modal-budget {
+    background-color: rgb(68, 68, 255);
+    color: white;
+    font-size: 1rem;
+    border-radius: 12px;
+    border: none;
+    padding: 15px 20px;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.create-budget-btn:hover, .close-modal-budget:hover {
+    background-color: rgb(46, 46, 236);
+    color: rgb(230, 230, 230);
+    cursor: pointer;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+.add-budget-btn {
+    margin-top: 25px;
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 12px;
+    background-color: var(--btn-color);
+    color: var(--btn-text-color);
+    font-weight: 500;
+    border: none;
+
+    transition: all 0.3s ease;
+}
+
+.add-budget-btn:hover {
+    cursor: pointer;
+    transform: translateY(2.5%);
+}
+
+.danger-color-over-text {
+    color: rgb(255, 64, 64);
+}
+
+.modal-overlay-expense {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.add-expense-modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--card-bg);
+    padding: 10px;
+    width: 25vw;
+    height: 30vh;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px var(--sec-text-color);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--main-text-color);
+}
+
+.summary-modal {
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -40%);
+    background-color: var(--card-bg);
+    padding: 10px;
+    width: 25vw;
+    height: 50vh;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px var(--sec-text-color);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--main-text-color);
+}
+
+.summary-item {
+    list-style: none;
+    width: 18vw;
+    padding: 5px;
+    margin: 2.5px;
+}
+
+.summary-item-text {
+    color: var(--sec-text-color);
+}
+
+.summary-item-amount {
+    font-size: 1.2rem;
+    color: var(--main-text-color);
+}
+
+.budget-summary-name {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    /* gap: 40px; */
+    width: 22vw;
+    justify-content: space-between;
+}
+
+.expenses-list {
+    height: 45vh;
+    overflow: scroll;
+}
+
+.expenses-list::-webkit-scrollbar {
+    display: none;
+  }
+
+.close-modal-summary, .delete-budget-btn {
+    background-color: rgb(68, 68, 255);
+    color: white;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: none;
+    padding: 5px 7.5px;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.close-modal-summary:hover, .delete-budget-btn:hover {
+    background-color: rgb(46, 46, 236);
+    color: rgb(230, 230, 230);
+    cursor: pointer;
+    transform: translateY(2%);
+}
+
+.delete-budget-btn {
+    background-color: rgb(255, 79, 59);
+
+}
+
+.delete-budget-btn:hover {
+    background-color: rgb(247, 58, 37);
+}
+
+@media (max-width: 1200px) {
+    .budgets-container {
+        width: 95vw;
+    }
+    .budget-card-name {
+        font-size: 1rem;
+        width: 20vw;
+    }
+
+    .budget-card-progess {
+        width: 30vw;
+    }
+
+    .amount-card {
+        text-align: center;
+        color: var(--main-text-color);
+        width: 15vw;
+    }
+
+    .btns-card {
+        width: 20vw;
+    }
+
+    .crramount-budget-card {
+        font-size: 1.2rem;
+    }
+
+    .totalamount-budget-card{
+        font-size: 0.8rem;
+    }
+
+    .add-budget-modal {
+        width: 45vw;
+        height: 32vh;
+    }
+
+    .add-budget-input {
+        width: 35vw;
+    }
+
+    .buttons-modal {
+        width: 35vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .add-expense-modal {
+        width: 45vw;
+        height: 32vh;
+    }
+
+    .summary-modal {
+        width: 45vw;
+    }
+
+    .summary-item {
+        width: 40vw;
+    }
+
+    .budget-summary-name {
+        width: 40vw;
+    }
+
+    .summary-btns{
+        width: 20vw;
+    }
+
+}
+
+@media (max-width: 860px) {
+
+    .budget-card {
+        height: 20vh;
+    }
+
+    .budget-card-name {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        transform: translate(-10%, -10%);
+        width: 45vw;
+        font-size: 1.2rem;
+    }
+
+    .budget-card-progess {
+        width: 80vw;
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -80%);
+    }
+
+    .btns-card {
+        width: 35vw;
+        position: absolute;
+        top: 10%;
+        left: 90%;
+        transform: translate(-90%, -10%);
+    }
+
+    .amount-card {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60vw;
+    }
+
+    .crramount-budget-card {
+        font-size: 1.2rem;
+    }
+
+    .totalamount-budget-card{
+        font-size: 0.9rem;
+    }
+
+    .add-budget-modal {
+        width: 75vw;
+    }
+
+    .add-budget-input {
+        width: 65vw;
+    }
+
+    .buttons-modal {
+        width: 65vw;
+    }
+
+    .add-expense-modal {
+        width: 75vw;
+    }
+
+    .summary-modal {
+        width: 75vw;
+    }
+
+    .summary-item {
+        width: 70vw;
+    }
+
+    .budget-summary-name {
+        width: 70vw;
+    }
+
+    .summary-btns{
+        width: 35vw;
+    }
+}
+
+@media (max-width: 450px) {
+    .budget-card-name {
+        font-size: 0.9rem;
+        width: 45vw;
+    }
+
+    .btns-card {
+        width: 45vw;
+        scale: 0.9;
+    }
+    .add-budget-modal {
+        width: 85vw;
+    }
+
+    .add-budget-input {
+        width: 75vw;
+    }
+
+    .buttons-modal {
+        width: 75vw;
+    }
+
+    .add-expense-modal {
+        width: 85vw;
+    }
+
+    .summary-modal {
+        width: 85vw;
+    }
+
+    .budget-summary-name {
+        font-size: 1rem;
+        width: 60vw;
+    }
+
+    .summary-item {
+        width: 80vw;
+    }
+
+    .budget-summary-name {
+        width: 80vw;
+    }
+
+    .summary-btns{
+        width: 30vw;
+        scale: 0.85;
+    }
+}

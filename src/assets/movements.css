@@ -1,0 +1,212 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.movements-page-light {
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+
+    --card-bg: rgb(255, 255, 255);
+    --sec-bg-color: rgb(245, 242, 242);
+    --main-text-color: rgb(18, 18, 18);
+    --sec-text-color: rgba(41, 42, 42, 0.751);
+    --icons-color: rgb(68, 68, 255);
+    --border-color: rgb(221, 220, 220);
+    --icon2-color: black;
+}
+
+.movements-page-dark {
+    height: 100vh;
+    background-color: rgb(34, 31, 38);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+
+    --card-bg: rgb(34, 31, 38);
+    --sec-bg-color: rgb(54, 50, 64);
+    --main-text-color: rgb(255, 255, 255);
+    --sec-text-color: rgba(255, 255, 255, 0.751);
+    --icons-color: rgb(68, 68, 255);
+    --border-color: rgb(39, 34, 34);
+    --icon2-color: white;
+}
+
+.eye-icon, .info-icon {
+    color: var(--icon2-color);
+}
+
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 65vw;
+    margin-top: 50px;
+}
+
+.info, .balance {
+    background-color: var(--sec-bg-color);
+    padding: 15px 30px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* width: 12vw; */
+}
+
+.main-text {
+    font-size: 1.5rem;
+    color: var(--main-text-color);
+}
+
+.sec-text {
+    font-size: 1.25rem;
+    color: var(--sec-text-color);
+}
+
+.movements-container {
+    padding: 10px;
+    margin: 5px;
+    margin-top: 30px;
+    width: 65vw;
+    height: 61vh;
+    border-radius: 12px;
+    background-color: var(--sec-bg-color);
+    overflow: scroll;
+}
+
+.movements-container::-webkit-scrollbar {
+    display: none;
+  }
+
+.movement-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 10px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    margin-top: 5px;
+    color: var(--main-text-color);
+}
+
+.card-left, .card-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.deposit {
+    background-color: rgb(94, 255, 121);
+    padding: 2.5px 15px;
+    border-radius: 24px;
+    color: black;
+    box-shadow: 0 1px 2px black;
+}
+
+.withdraw {
+    background-color: rgb(255, 100, 79);
+    color: black;
+    padding: 2.5px 15px;
+    border-radius: 24px;
+    box-shadow: 0 1px 2px black;
+}
+
+.modal {
+    background-color: var(--card-bg);
+    padding: 10px;
+    height: 20vh;
+    width: 50vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px black;
+    color: var(--main-text-color);
+}
+
+.x-icon {
+    color: var(--icon2-color);
+}
+
+.top-info-mov {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.top-info-mov button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.mov-descp {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.description p{
+    margin-top: 5px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+@media (max-width: 620px) {
+    .top-section {
+        gap: 10px;
+        flex-direction: column;
+        width: 90vw;
+        margin-top: 25px;
+    }
+
+    .info, .balance {
+        width: 70vw;
+    }
+
+    .movements-container {
+        width: 90vw;
+        height: 45vh;
+    }
+
+    .movement-card {
+        padding: 25px 10px;
+        margin-top: 7.5px;
+        font-size: 0.9rem;
+    }
+
+    .card-left, .card-right {
+        gap: 10px;
+    }
+
+    .deposit, .withdraw {
+        padding: 2.5px 7.5px;
+
+
+    }
+
+    .modal {
+        height: 50vh;
+        width: 60vw;
+        top: 40%;
+        transform: translate(-50%, -40%);
+    }
+}

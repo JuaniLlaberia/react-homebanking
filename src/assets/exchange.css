@@ -1,0 +1,119 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.exchange-page-light {
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    --sec-bg-color: rgb(245, 242, 242);
+    --main-text-color: rgb(18, 18, 18);
+    --sec-text-color: rgba(41, 42, 42, 0.751);
+    --icons-color: rgb(68, 68, 255);
+    --border-color: rgb(221, 220, 220);
+    --input-bg-color: white;
+
+    transition: all 0.3s ease;
+}
+
+.exchange-page-dark {
+    height: 100vh;
+    background-color: rgb(34, 31, 38);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    --sec-bg-color: rgb(54, 50, 64);
+    --main-text-color: rgb(255, 255, 255);
+    --sec-text-color: rgba(255, 255, 255, 0.751);
+    --icons-color: rgb(251, 251, 251);
+    --border-color: rgb(39, 34, 34);
+    --input-bg-color: rgb(73, 71, 97);
+}
+
+.exchange-container {
+    background-color: var(--sec-bg-color);
+    border-radius: 8px;
+    border: none;
+    color: var(--main-text-color);
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 2px 5px black;
+}
+
+.title {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.input-field {
+    padding: 10px;
+}
+
+.input-field select {
+    background-color: transparent;
+    border: none;
+    color: var(--main-text-color);
+    font-size: 1rem;
+}
+
+.input-field select option{
+    background-color: var(--sec-bg-color);
+}
+
+.input-field input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--main-text-color);
+    font-size: 2rem;
+    width: 15vw;
+}
+
+.rotate-btn {
+    margin-top: 10px;
+    background-color: var(--icons-color);
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input:focus {
+    outline: none;
+}
+
+.rate {
+    margin-top: 50px;
+    font-size: 1.75rem;
+}
+
+.currency-code {
+    color: var(--sec-text-color);
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+@media (max-width: 620px) { 
+    .exchange-container {
+        width: 80vw;
+    }
+}
+
+@media (max-width: 390px) { 
+    .exchange-container {
+        transform: scale(0.9);
+    }
+}

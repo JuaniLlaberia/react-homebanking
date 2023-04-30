@@ -25,7 +25,7 @@ const ExchangeMoney = () => {
       setOutputAmount(inputAmount);
       setExchange(1)
     };
-  }, [inputAmount, currency, newCurrency])
+  }, [inputAmount, currency, newCurrency, exchange])
 
   return (
     <main className={`exchange-page-${theme}`}>

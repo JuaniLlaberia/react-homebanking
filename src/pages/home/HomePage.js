@@ -1,9 +1,20 @@
-import React from 'react'
+import { useState } from 'react'
+import Footer from './Footer'
+import Header from './Header'
+import InfoSection from './InfoSection'
+import NavbarHome from './NavbarHome'
+import TabsSection from './TabsSection'
+import './homepage.css'
 
 const HomePage = () => {
+
   return (
     <div>
-      Home Page :D
+      <Header/>
+      <InfoSection/>
+      <TabsSection/>
+      <Footer />
+      <NavbarHome />
     </div>
   )
 }

@@ -18,7 +18,7 @@ const TransferMoney = () => {
   const receiverRef = useRef();
   const descriptionRef = useRef();
 
-  const accToDisplay = useMemo(() => accounts.find(acc => acc.email === currentAcc.email));
+  const accToDisplay = useMemo(() => accounts.find(acc => acc.email === currentAcc.email), [accounts, currentAcc.email]);
 
   useEffect(() => {document.title = 'Home Banking: Transfer Money'}, []);
 

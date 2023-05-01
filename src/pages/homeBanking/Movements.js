@@ -6,7 +6,7 @@ import MovementCard from '../../components/MovementCard';
 import { currencyFormater } from '../../utils/currencyFormater';
 import {v4 as uuidv4} from 'uuid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faEyeSlash, faSort } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '../../context/ThemeContext';
 import { useAccountsContext } from '../../context/AccountsContext';
 
@@ -15,6 +15,7 @@ export default function Movements() {
     const {currentAcc} = useCrrAccContext();
     const [balanceVisible, setBalanceVisible] = useState(true);
     const {theme} = useTheme();
+    const [sorted, setSorted] = useState(false);
 
     useEffect(() => {document.title = 'Home Banking: Movements'}, []);
 
@@ -22,9 +23,17 @@ export default function Movements() {
     const fullName = accToDisplay.name.split(' ').map(q => q.slice(0,1).toUpperCase() + q.slice(1).toLowerCase()).join(' ')
     const totalBalance = accToDisplay.movements.reduce((acc, crr) => acc + crr.amount, 0);
 
-    const movements = accToDisplay.movements.map(mov => {
-      return <MovementCard key={uuidv4()} date={mov.date} amount={mov.amount} description={mov.description}/>
-    })
+    const renderMovements = () => {
+      if (sorted) {
+        return accToDisplay.movements.slice().sort((a, b) => b.amount - a.amount).map(mov => {
+          return <MovementCard key={uuidv4()} date={mov.date} amount={mov.amount} description={mov.description}/>
+        })
+      } else {
+        return accToDisplay.movements.map(mov => {
+          return <MovementCard key={uuidv4()} date={mov.date} amount={mov.amount} description={mov.description}/>
+        });
+      }
+    };
 
   return (
     <main className={`movements-page-${theme}`}>
@@ -33,8 +42,9 @@ export default function Movements() {
         <div className='balance'><p className='sec-text'>Balance  <FontAwesomeIcon className='eye-icon' onClick={() => setBalanceVisible(!balanceVisible)} icon={balanceVisible ? faEye : faEyeSlash} style={{cursor:'pointer', marginLeft:'5px', width:'20px'}}/></p><p className='main-text'>{balanceVisible ? currencyFormater(totalBalance) : '*****'}</p></div>
       </section>
       <ul className='movements-container'>
-        {movements}
+        {renderMovements()}
       </ul>
+      <button className='sorting-movs' onClick={() => setSorted(!sorted)}>Sort Movements <FontAwesomeIcon icon={faSort}/></button>
       <Navbar />
     </main>
   )

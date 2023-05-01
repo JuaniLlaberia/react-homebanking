@@ -113,3 +113,55 @@
     color: rgb(255, 55, 55);
     font-size: 0.8rem;
 }
+
+
+.back-btn {
+    position: absolute;
+    top: 2.5%;
+    left: 5%;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-weight: 600;
+}
+
+.back-btn:hover {
+    cursor: pointer;
+}
+
+.progress-container{
+    position: relative;
+}
+
+.prog[value] {
+    width: 25vw;
+    min-width: 150px;
+    appearance: none;
+ }
+
+ .prog[value]::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  }
+
+.streght-poor[value]::-webkit-progress-value {
+    background-color: #ff3838;
+}
+
+.strenght-strong[value]::-webkit-progress-value {
+    background-color: #76fc4e;
+}
+
+.strenght-okey[value]::-webkit-progress-value {
+    background-color: #ffcb2f;
+}
+
+.strenght-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: black;
+    font-weight: 300;
+    transform: translate(-50%, -50%);
+}

@@ -27,7 +27,7 @@ nav {
     text-decoration: none;
     padding: 10px 5px;
 
-    transition: all 1s ease;
+    transition: all 0.5s ease-in-out;
 }
 
 .icon-text {
@@ -39,4 +39,5 @@ nav {
 .active {
     color: rgb(68, 68, 255);
     border-bottom: 4px solid rgb(68, 68, 255);
+
 }

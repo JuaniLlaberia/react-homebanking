@@ -4,6 +4,8 @@ import ErrorMsg from '../../components/ErrorMsg';
 import { useCrrAccContext } from '../../context/CrrAccContext';
 import { useAccountsContext } from '../../context/AccountsContext';
 import { Link, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 export default function LoginForm() {
   const {accounts} = useAccountsContext();
@@ -47,6 +49,7 @@ export default function LoginForm() {
           </form>
           {errorMessege && <ErrorMsg msg='The email or password is not valid. Try Again!'/>}
       </div>
+      <button onClick={() => navigate('/')} className='back-btn'><FontAwesomeIcon icon={faArrowLeft}/> Back Home</button>
     </section>
   )
 }

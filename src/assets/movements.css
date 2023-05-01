@@ -59,6 +59,7 @@
     justify-content: center;
     align-items: center;
     /* width: 12vw; */
+    min-width: 200px;
 }
 
 .main-text {
@@ -170,6 +171,18 @@
     cursor: pointer;
 }
 
+.sorting-movs {
+    position: absolute;
+    top: 82.5%;
+    right: 20%;
+    background-color: transparent;
+    border: none;
+    color: var(--main-text-color);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
 @media (max-width: 620px) {
     .top-section {
         gap: 10px;
@@ -208,5 +221,10 @@
         width: 60vw;
         top: 40%;
         transform: translate(-50%, -40%);
+    }
+
+    .sorting-movs {
+        top: 77.5%;
+        right: 10%;
     }
 }

@@ -10,9 +10,9 @@ export const AccountsProvider = ({children}) => {
     const [accounts, setAccounts] = useState(accountsStored);
     const {currentAcc} = useCrrAccContext()
 
-    ///////////////////
-    // MAKE CODE CLEANER
-    ///////////////////
+    const accIndex = accounts.findIndex(
+        (acc) => acc.email === currentAcc?.email
+      );
 
     const addAccount = (account) => setAccounts(prev => {
         if (!prev) {
@@ -29,12 +29,8 @@ export const AccountsProvider = ({children}) => {
         const accCopy = [...accounts];
         const today = new Intl.DateTimeFormat('en-En').format(new Date())
 
-        const indexSender = accounts.findIndex(
-            (acc) => acc.email === currentAcc.email
-          );
-
-        if (indexSender !== -1) {
-            accCopy[indexSender].movements.unshift({
+        if (accIndex !== -1) {
+            accCopy[accIndex].movements.unshift({
                 amount: -amount,
                 date: today,
                 description: description
@@ -59,9 +55,6 @@ export const AccountsProvider = ({children}) => {
 
     const addBudget = (name, total) => setAccounts(() => {
         const accCopy = [...accounts];
-        const accIndex = accCopy.findIndex(
-            (acc) => acc.email === currentAcc.email
-          );
 
         accCopy[accIndex].budgets.unshift({
             name:name,
@@ -76,9 +69,6 @@ export const AccountsProvider = ({children}) => {
 
     const addExpense = (budgetID, amount, description) => setAccounts(() => {
         const accCopy = [...accounts];
-        const accIndex = accCopy.findIndex(
-            (acc) => acc.email === currentAcc.email
-          );
 
         accCopy[accIndex].budgets.find(budget => budget.id === budgetID).expenses.push({
             amount: amount,
@@ -91,9 +81,6 @@ export const AccountsProvider = ({children}) => {
 
     const removeBudget = (crrBudget) => setAccounts(() => {
         const accCopy = [...accounts];
-        const accIndex = accCopy.findIndex(
-            (acc) => acc.email === currentAcc.email
-          );
         const budgetIndex = accCopy[accIndex].budgets.findIndex(budget => budget === crrBudget)
 
         accCopy[accIndex].budgets.splice(budgetIndex, 1);

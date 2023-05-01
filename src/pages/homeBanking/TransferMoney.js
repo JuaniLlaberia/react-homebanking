@@ -13,7 +13,6 @@ const TransferMoney = () => {
   const {accounts, addMovement} = useAccountsContext();
   const [status, setStatus] = useState(undefined);
   const { theme } = useTheme();
-
   const amountRef = useRef();
   const receiverRef = useRef();
   const descriptionRef = useRef();
